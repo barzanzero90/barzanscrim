@@ -11,7 +11,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var phonenumberoremail = document.getElementById('phonenumberoremail').value;
-phonenumberoremail.addEventListener('input', function() {
+phonenumberoremail.addEventListener('input', function () {
     this.style.textAlign = this.value ? 'left' : 'right';
 });
 
@@ -22,23 +22,26 @@ function submitData() {
     var phonenumberoremail = document.getElementById('phonenumberoremail').value;
     var pubgid = document.getElementById("pubgid").value;
     var dropdown = document.getElementById("dropdown").value;
-    var device = document.getElementById("device").value;
+    var deviceMobile = document.getElementById("device-mobile");
+    var deviceIpad = document.getElementById("device-ipad");
 
     if (fullname === '') {
         alert("ناوی سیانی");
         return;
     }
     if (phonenumberoremail === '') {
-        alert("ژمارەی مۆبایل یان ئیمەیڵ");
+        alert("ژمارەی مۆبایل");
         return;
     }
     if (pubgid === '') {
         alert("ئایدی پۆبجی");
         return;
     }
-    if (dropdown != device) {
+    if (dropdown !== deviceMobile.value && dropdown !== deviceIpad.value) {
         alert("جۆری ئامێر");
         return;
+    } else {
+        alert("خۆتۆمارکردن سەرکەوتووبوو")
     }
 
     var sanitizedPhoneNumber = phonenumberoremail.replace(/\D/g, ''); // Remove non-digit characters
@@ -54,10 +57,6 @@ function submitData() {
         pubgid: pubgid,
         dropdown: dropdown,
     };
-
-    if (fullname && phonenumberoremail && pubgid && dropdown === device) {
-        alert("خۆتۆمارکردن سەرکەوتووبوو")
-    }
 
     var database = firebase.database().ref('users');
     database.push(userData);
