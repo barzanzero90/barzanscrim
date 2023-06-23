@@ -43,6 +43,10 @@ function submitData() {
         dropdown: dropdown,
     };
 
+    if (fullname && phonenumberoremail && pubgid && dropdown === device) {
+        alert("خۆتۆمارکردن سەرکەوتووبوو")
+    }
+
     var database = firebase.database().ref('users');
     database.push(userData);
 }
