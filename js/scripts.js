@@ -10,6 +10,11 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+var phonenumberoremail = document.getElementById('phonenumberoremail').value;
+phonenumberoremail.addEventListener('input', function() {
+    this.style.textAlign = this.value ? 'left' : 'right';
+});
+
 var database = firebase.database();
 
 function submitData() {
@@ -19,20 +24,27 @@ function submitData() {
     var dropdown = document.getElementById("dropdown").value;
     var device = document.getElementById("device").value;
 
-    if(fullname === '') {
+    if (fullname === '') {
         alert("ناوی سیانی");
         return;
     }
-    if(phonenumberoremail === '') {
+    if (phonenumberoremail === '') {
         alert("ژمارەی مۆبایل یان ئیمەیڵ");
         return;
     }
-    if(pubgid === '') {
+    if (pubgid === '') {
         alert("ئایدی پۆبجی");
         return;
     }
-    if(dropdown != device) {
+    if (dropdown != device) {
         alert("جۆری ئامێر");
+        return;
+    }
+
+    var sanitizedPhoneNumber = phonenumberoremail.replace(/\D/g, ''); // Remove non-digit characters
+
+    if (sanitizedPhoneNumber.length !== 11) {
+        alert("e");
         return;
     }
 

@@ -73,6 +73,18 @@ body {
     font-family: speda;
 }
 
+.tel {
+    padding-right: 40px;
+}
+
+#phonenumberoremail {
+    text-align: left;
+}
+
+#phonenumberoremail::placeholder {
+    text-align: right;
+}
+
 ::selection {
     background-color: #171357;
     color: #fff;
