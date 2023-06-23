@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    font-family: speda;
+    background-image: url("/pu.avif");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: speda;
+    src: url("/font/Speda-Bold.ttf");
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.form-group input {
+    width: 300px;
+    text-align: right;
+    padding: 7px 5px;
+    border-radius: 5px;
+    border: none;
+    font-family: speda;
+}
+
+.form-group button {
+    background-color: #210EF4;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    width: 200px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-family: speda;
+}
+
+.form-group select {
+    width: 300px;
+    text-align: right;
+    padding: 7px 5px;
+    border-radius: 5px;
+    border: none;
+    font-family: speda;
+}
+
+::selection {
+    background-color: #171357;
+    color: #fff;
+}
