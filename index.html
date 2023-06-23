@@ -11,24 +11,24 @@
 
 <body>
 
-        <div class="form">
-            <div class="form-group">
-                <input type="text" id="fullname" placeholder="ناوی سیانی" required>
-                <div class="tel">
-                    <label for="phonenumberoremail">
-                        +964
-                        <input type="tel" id="phonenumberoremail" placeholder="ژمارەی مۆبایل" required>
-                    </label>
-                </div>
-                <input type="number" id="pubgid" placeholder="ئایدی پۆبجی" required>
-                <select id="dropdown">
-                    <option disabled selected>جۆری ئامێر</option>
-                    <option id="device">مۆبایل</option>
-                    <option id="device">ئایپاد</option>
-                </select>
-                <button onclick="submitData()">خۆتۆمارکردن</button>
+    <div class="form">
+        <div class="form-group">
+            <input type="text" id="fullname" placeholder="ناوی سیانی" required>
+            <div class="tel">
+                <label for="phonenumberoremail">
+                    +964
+                    <input type="tel" id="phonenumberoremail" placeholder="ژمارەی مۆبایل" required>
+                </label>
             </div>
+            <input type="number" id="pubgid" placeholder="ئایدی پۆبجی" required>
+            <select id="dropdown">
+                <option disabled selected>جۆری ئامێر</option>
+                <option id="device">مۆبایل</option>
+                <option id="device">ئایپاد</option>
+            </select>
+            <button onclick="submitData()">خۆتۆمارکردن</button>
         </div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
